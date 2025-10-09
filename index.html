@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eliel Zuin | Portfólio</title>
+    <meta name="description" content="Navbar premium, escura e responsiva para portfólio de emprego." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/index.css" />
 </head>
+
 <body>
-    <h1>hello world!</h1>
+    <!--navbar-->
+    <div class="nav">
+        <nav>
+            <h2 class="logo particles-content">Eliel <span>Zuin</span></h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="abouthme.html">Sobre Mim</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+            <button type="button">Baixar CV</button>
+        </nav>
+    </div>
+
+    <!-- SECTION PARTICLES -->
+    <section id="particles-section">
+        <canvas id="particles-canvas"></canvas>
+        <div class="particles-content">
+            <h2>Desenvolvedor Backend C# / .NET</h2>
+            <p>Olá! sou o Eliel, estudante de Engenharia de Computação e desenvolvedor backend com foco em C#/.NET e
+                SQL. <br>
+                Tenho experiência construindo APIs, integrando bancos de dados e aplicando boas práticas de código <br>
+                limpo, testes e logs estruturados. Busco sempre aprender mais e entregar soluções que realmente <br>
+                funcionam.</p>
+        </div>
+    </section>
+
+    <!-- ===== PROJETOS POR CATEGORIA ===== -->
+    <section id="projetos" class="categorias-section">
+        <h2>Meus Projetos</h2>
+        <p class="subtitle">Apesar do foco em BACKEND, me aventuro em todas estas stacks organizadas por área de atuação
+            abaixo</p>
+
+        <div class="categorias-grid">
+
+            <!-- FRONTEND -->
+            <div class="categoria-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>Frontend</h3>
+                <p>Interfaces modernas e responsivas com HTML, JS, CSS e Tailwind.</p>
+                <a href="frontend.html" class="btn">Saber mais</a>
+            </div>
+
+            <!-- BACKEND -->
+            <div class="categoria-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3>Backend</h3>
+                <p>APIs, banco de dados e integrações sólidas em .NET e SQL.</p>
+                <a href="backend.html" class="btn">Saber mais</a>
+            </div>
+
+            <!-- MOBILE -->
+            <div class="categoria-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>Mobile</h3>
+                <p>Aplicativos Android nativos com APIs e UI fluida.</p>
+                <a href="mobile.html" class="btn">Saber mais</a>
+            </div>
+
+            <!-- GAMES -->
+            <div class="categoria-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <h3>Games</h3>
+                <p>Jogos 2D criados em .LUA com Love2D, com física e arte próprias.</p>
+                <a href="games.html" class="btn">Saber mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CHAMADA PARA SOBRE MIM ===== -->
+    <section id="call-about" class="call-about">
+        <h2>Quer saber mais sobre mim?</h2>
+        <p>Minha trajetória, história na programação e o que me motiva todos os dias.</p>
+        <a href="aboutme.html" class="btn">Conheça mais sobre mim</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Eliel Zuin</h3>
+            <p>Desenvolvedor Backend C# / .NET — apaixonado por tecnologia, aprendizado e código limpo.</p>
+            <div class="socials">
+                <a href="https://github.com/elielzuin" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/elielzuin" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:elielzuin.dev@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <span class="copyright">© 2025 — Desenvolvido por Eliel Zuin</span>
+        </div>
+    </footer>
+
+
+
+
+    <script src="assets/js/index.js"></script>
 </body>
+
 </html>
