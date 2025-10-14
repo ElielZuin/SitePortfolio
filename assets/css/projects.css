@@ -1,0 +1,234 @@
+/* base */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0b0b0b;
+    --panel: #141414;
+    --muted: #bfbfbf;
+    --text: #e5e7eb;
+    --accent: #ea1538;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', ui-sans-serif, system-ui;
+    color: var(--text);
+    background: #0b0b0b;
+}
+
+/* navbar */
+.nav nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 10%;
+    background: #141414;
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.logo {
+    font-size: 28px;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent);
+}
+
+button {
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: .2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* seção dos cards (main flex:1 pra empurrar footer) */
+.categorias-section {
+    flex: 1;
+    background: #0b0b0b;
+    color: #fff;
+    text-align: center;
+    padding: 90px 10% 100px;
+}
+
+.categorias-section h2 {
+    color: var(--accent);
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: .5px;
+}
+
+.categorias-section .subtitle {
+    color: #ccc;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* card clicável */
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* card */
+.categoria-card {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 18px;
+    padding: 40px 25px;
+    transition: all .3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.categoria-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle at top left, rgba(234, 21, 56, .08), transparent 60%);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.categoria-card:hover::before {
+    opacity: 1;
+}
+
+.categoria-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(234, 21, 56, .25);
+}
+
+.icon-box {
+    background: rgba(234, 21, 56, .1);
+    border: 2px solid rgba(234, 21, 56, .4);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    transition: all .3s ease;
+}
+
+.categoria-card:hover .icon-box {
+    background: var(--accent);
+    color: #fff;
+    transform: rotate(10deg) scale(1.1);
+}
+
+.categoria-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.categoria-card p {
+    font-size: .95rem;
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.categoria-card .btn {
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    display: inline-block;
+    transition: .2s;
+}
+
+.categoria-card .btn:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 0 15px rgba(255, 0, 60, .4);
+}
+
+/* footer fino (igual ao da foto) */
+.footer {
+    background: #101010;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    color: #ddd;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-weight: 600;
+}
+
+.footer .links {
+    display: flex;
+    gap: 18px;
+}
+
+.footer .links a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer .links a:hover {
+    color: #fff;
+}
