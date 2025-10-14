@@ -1,8 +1,8 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Outfit', ui-sans-serif, system-ui;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', ui-sans-serif, system-ui;
 }
 
 nav {
@@ -16,84 +16,218 @@ nav {
 
 .logo {
   font-size: 28px;
-  line-height: 80px; /* centraliza verticalmente dentro da nav */
+  line-height: 80px;
+  /* centraliza verticalmente dentro da nav */
   color: white;
 }
 
-span{
-    color: #ea1538;
+span {
+  color: #ea1538;
 }
 
-nav ul li{
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px 20px;
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
 }
 
-nav ul li a{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-nav ul li a:hover{
-    color: #ea1538;
-    transition: .3s;
+nav ul li a:hover {
+  color: #ea1538;
+  transition: .3s;
 }
 
-button{
-    border:none;
-    background: #ea1538;
-    padding: 12px 30px;
-    border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    transition: .4s;
+button {
+  border: none;
+  background: #ea1538;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: .4s;
 }
 
-button:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-/* Section base */
+/* ===========================
+   HERO + PARTICLES + SKILLS
+   =========================== */
+
+/* Section base (agora elástica para caber os cards) */
 #particles-section {
   position: relative;
   width: 100%;
-  height: 875px; /* ajuste conforme o tamanho que quiser */
+  height: auto;
+  /* era 875px fixo */
+  min-height: 720px;
   overflow: hidden;
-  background: #000000; /* fundo escuro */
+  background: #000000;
+  /* fundo escuro */
+  padding-bottom: 90px;
+  /* respiro abaixo dos cards */
 }
 
 /* Canvas ocupa toda a área */
 #particles-canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
 
-/* Conteúdo em cima */
+/* Conteúdo em cima (reposicionado – sem centralização vertical fixa) */
 .particles-content {
   position: relative;
   z-index: 10;
   text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
   color: #e5e7eb;
-  font-family: 'Outfit', sans-serif;
+  padding: 110px 5% 30px;
+  /* topo/ laterais / embaixo */
+  transform: none;
+  /* remove translateY */
+  top: auto;
+  /* remove top:50% */
 }
 
 .particles-content h2 {
-  font-size: 4rem;
-  color: #f83838; /* azul claro */
+  font-size: clamp(2.4rem, 2rem + 2vw, 4rem);
+  color: #f83838;
   margin-bottom: 10px;
 }
 
 .particles-content p {
-  font-size: 2rem;
+  font-size: clamp(1.1rem, .9rem + 1vw, 2rem);
+}
+
+#particles-section .tech2-wrap {
+  position: relative;
+  z-index: 10;
+  /* acima do canvas */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 5% 0;
+}
+
+#particles-section .tech-title {
+  color: #ea1538;
+  font-weight: 800;
+  letter-spacing: .5px;
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem);
+  margin: 10px 0 22px;
+}
+
+#particles-section .tech-subtitle {
+  color: #bfbfbf;
+  font-size: 1.3rem;
+  line-height: 1.55;
+  margin-bottom: 40px;
+}
+
+/* Grid: 4 colunas (duas linhas lindas) */
+#particles-section .tech2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px 46px;
+  /* row / column gap */
+  justify-items: center;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Cards grandes */
+#particles-section .tech2-card {
+  width: 210px;
+  /* cards maiores */
+  height: 190px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#particles-section .tech2-card::before {
+  content: "";
+  position: absolute;
+  inset: -70% -70% auto auto;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(closest-side, rgba(234, 21, 56, .085), transparent 70%);
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+
+#particles-section .tech2-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  border-color: rgba(234, 21, 56, 0.35);
+  box-shadow: 0 0 28px rgba(234, 21, 56, .28), inset 0 0 12px rgba(234, 21, 56, .12);
+}
+
+/* Ícones maiores */
+#particles-section .tech2-card img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 7px rgba(234, 21, 56, .28)) brightness(1.06) contrast(1.06);
+  user-select: none;
+}
+
+#particles-section .tech2-card span {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+  #particles-section .tech2-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  #particles-section .tech2-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  #particles-section .tech2-card {
+    width: 200px;
+    height: 180px;
+  }
+
+  #particles-section .tech2-card img {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+@media (max-width: 420px) {
+  #particles-section .tech2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #particles-section .tech2-card {
+    width: 92vw;
+    max-width: 340px;
+    height: 176px;
+  }
 }
 
 
