@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropSense | Backend e Arquitetura</title>
+    <meta name="description"
+        content="Arquitetura técnica e funcionamento do sistema DropSense — processamento local, API de ativação e segurança avançada." />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/dropsense.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="nav">
+        <nav>
+            <h2 class="logo">Eliel <span>Zuin</span></h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projetos</a></li>
+                <li><a href="../aboutme.html">Sobre Mim</a></li>
+                <li><a href="../contact.html">Contato</a></li>
+            </ul>
+            <a class="btn" href="../assets/docs/cv.pdf" target="_blank" rel="noopener">Baixar CV</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>DropSense — Processamento de Imagens Hidrossensíveis Offline</h1>
+            <p>Análise confiável, performance local e ativação segura. Tecnologia projetada para precisão e privacidade
+                em campo.</p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO -->
+    <main class="content">
+        <section>
+            <h2>Sobre o Projeto</h2>
+            <p>
+                O <strong>DropSense</strong> é um sistema de análise de cartões hidrossensíveis desenvolvido para
+                funcionar
+                totalmente <strong>offline</strong>. Seu propósito é simplificar o processo de análise em campo,
+                permitindo que
+                o usuário capture e processe imagens localmente, sem necessidade de servidores externos. A única conexão
+                exigida
+                é durante a ativação inicial, garantindo assim uma camada de segurança e controle de licenças.
+            </p>
+        </section>
+
+        <section>
+            <h2>Arquitetura Técnica</h2>
+            <p>
+                O sistema é composto por dois componentes principais:
+            </p>
+            <ul>
+                <li><strong>App Android (Java)</strong> — Responsável por toda a análise de imagem, interface e execução
+                    dos cálculos de métricas, como <em>densidade de manchas</em>, <em>distribuição</em> e <em>taxa de
+                        cobertura</em>. Utiliza <strong>OpenCV</strong> para processamento e roda integralmente no
+                    dispositivo.</li>
+                <li><strong>API de Ativação (.NET / ASP.NET Core)</strong> — Gerencia o licenciamento do aplicativo.
+                    Cada chave é autenticada via <strong>criptografia assimétrica</strong> e validada diretamente no
+                    dispositivo, sem necessidade de conexão contínua.</li>
+            </ul>
+            <p>
+                A arquitetura foi projetada para ser modular, permitindo futuras expansões como integração com
+                relatórios e
+                sincronização de resultados, mantendo o núcleo local por questões de privacidade e latência zero.
+            </p>
+        </section>
+
+        <section>
+            <h2>Segurança e Logs Estruturados</h2>
+            <p>
+                A segurança foi um pilar central do projeto. Implementamos camadas de proteção contra engenharia
+                reversa, ofuscação do código Java e verificação de integridade no momento da execução. A comunicação com
+                a API ocorre apenas em HTTPS com <em>pinning</em> de certificado.
+            </p>
+            <p>
+                Os <strong>logs estruturados</strong> são utilizados para auditoria e suporte técnico, organizados em
+                níveis de severidade e contexto. Nenhum dado sensível é registrado, apenas metadados de operação e
+                estado, garantindo rastreabilidade sem comprometer a privacidade do usuário.
+            </p>
+        </section>
+
+        <section>
+            <h2>Processamento Local e Performance</h2>
+            <p>
+                O processamento das imagens é feito integralmente no dispositivo, com algoritmos otimizados em Java.
+                Foram implementadas rotinas matemáticas específicas para cálculo de área de deposição e densidade média
+                visual (DMV). Versões iniciais em C# foram utilizadas como base para validação dos modelos, sendo
+                posteriormente adaptadas e refinadas para Java.
+            </p>
+            <p>
+                Durante o desenvolvimento, foram identificadas inconsistências em alguns cálculos de distribuição e
+                calibragem de contraste, que foram ajustadas com base em resultados experimentais reais. O resultado
+                final é
+                um algoritmo robusto, leve e preciso.
+            </p>
+        </section>
+
+        <section>
+            <h2>Resultados e Conclusão</h2>
+            <p>
+                Com o DropSense, foi possível atingir um tempo médio de análise inferior a <strong>2 segundos por
+                    imagem</strong>
+                em dispositivos intermediários, com consistência nos resultados entre diferentes modelos de smartphones.
+                A arquitetura híbrida — local e com ativação via API — garante segurança, privacidade e flexibilidade,
+                sem depender
+                de conectividade constante.
+            </p>
+            <p>
+                Este projeto reflete um equilíbrio entre <strong>engenharia de software, segurança da
+                    informação</strong> e
+                <strong>visão computacional</strong>, mostrando a importância de projetar soluções performáticas e
+                seguras mesmo
+                em ambientes offline.
+            </p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 — Desenvolvido por Eliel Zuin</p>
+    </footer>
+</body>
+
+</html>

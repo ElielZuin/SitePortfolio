@@ -1,0 +1,145 @@
+:root {
+    --accent: #00aaff;
+    --bg: #070b10;
+    --text: #e5e7eb;
+    --muted: #b7b7b7;
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* navbar (igual index) */
+.nav nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 10%;
+    background: rgb(20, 20, 20);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.logo {
+    font-size: 28px;
+    color: #fff;
+}
+
+.logo span {
+    color: #ea1538;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ea1538;
+}
+
+.btn {
+    display: inline-block;
+    background: #ea1538;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.btn:hover {
+    filter: brightness(1.06);
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('../img/dropsense.png') center/cover no-repeat;
+}
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), #070b10 90%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-logo {
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #d4d4d4;
+}
+
+/* CONTENT */
+.content {
+    padding: 80px 10%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--accent);
+    font-size: 1.6rem;
+    margin-top: 40px;
+}
+
+p {
+    color: #cfd1d4;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul {
+    margin: 15px 0 20px 25px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px 10%;
+    background: #0b0f15;
+    color: #999;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

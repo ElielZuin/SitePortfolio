@@ -422,3 +422,11 @@ button:hover {
   color: #777;
   margin-top: 10px;
 }
+
+
+/* card clicável */
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
